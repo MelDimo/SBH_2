@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ArrayOfOService>
+  <OService>
+    <Name>SrvOrganizationModel</Name>
+    <FileName>SrvOrganizationModel.dll</FileName>
+    <IFileName>ISrvOrganizationModel.dll</IFileName>
+    <Namespace>SrvOrganizationModel.OrganizationModel</Namespace>
+  </OService>
+</ArrayOfOService>

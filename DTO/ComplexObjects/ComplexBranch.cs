@@ -10,7 +10,9 @@ namespace ComplexObjects
 {
     public class ComplexBranch
     {
-        public Branch Branch { get; set; }
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public int RefStatus { get; set; }
         public ObservableCollection<Unit> Units { get; set; }
     }
 }

@@ -13,7 +13,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ISrvOrganizationModel", "IS
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestOrganizationModel", "UnitTestOrganizationModel\UnitTestOrganizationModel.csproj", "{280A3CC8-5A57-4A73-985B-95C0B280E2A7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SBSCoreTest", "SBSCoreTest\SBSCoreTest.csproj", "{9BD8ACBB-4CFD-4022-9040-63203A77A59A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SBSCoreTest", "SBSCoreTest\SBSCoreTest.csproj", "{9BD8ACBB-4CFD-4022-9040-63203A77A59A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SrvHost", "SrvHost\SrvHost.csproj", "{7E20CAD2-4A19-4D72-A1B1-5C0339AF67F9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -37,6 +39,10 @@ Global
 		{9BD8ACBB-4CFD-4022-9040-63203A77A59A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9BD8ACBB-4CFD-4022-9040-63203A77A59A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9BD8ACBB-4CFD-4022-9040-63203A77A59A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7E20CAD2-4A19-4D72-A1B1-5C0339AF67F9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7E20CAD2-4A19-4D72-A1B1-5C0339AF67F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7E20CAD2-4A19-4D72-A1B1-5C0339AF67F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7E20CAD2-4A19-4D72-A1B1-5C0339AF67F9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
