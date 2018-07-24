@@ -34,6 +34,21 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="ComplexObjects">
+      <HintPath>..\..\DTO\ComplexObjects\bin\Debug\ComplexObjects.dll</HintPath>
+    </Reference>
+    <Reference Include="GValues">
+      <HintPath>..\..\GValues\GValues\bin\Debug\GValues.dll</HintPath>
+    </Reference>
+    <Reference Include="SimpleObjects">
+      <HintPath>..\..\DTO\ComplexObjects\bin\Debug\SimpleObjects.dll</HintPath>
+    </Reference>
+    <Reference Include="SrvHost">
+      <HintPath>..\..\Services\SrvHost\bin\Debug\SrvHost.dll</HintPath>
+    </Reference>
+    <Reference Include="Support">
+      <HintPath>..\..\Utilities\Support\bin\Debug\Support.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
@@ -91,6 +106,11 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Model\" />
+    <Folder Include="ViewModel\" />
+    <Folder Include="View\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
