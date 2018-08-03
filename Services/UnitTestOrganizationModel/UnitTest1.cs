@@ -1,8 +1,9 @@
 ﻿using System;
 using System.Collections.ObjectModel;
-using ComplexObjects;
+using com.sbh.dto.complexobjects;
+using com.sbh.dto.simpleobjects;
+using com.sbh.srv.implementations;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using SrvOrganizationModel;
 
 namespace UnitTestOrganizationModel
 {
@@ -15,9 +16,9 @@ namespace UnitTestOrganizationModel
         {
             OrganizationModel organizationModel = new OrganizationModel();
 
-            ObservableCollection<ComplexOrganization> result = organizationModel.GetOrganization();
+            organizationModel.GetOrganization();
 
-            Assert.IsNotNull(result);
+            Assert.IsNotNull(true);
         }
     }
 }

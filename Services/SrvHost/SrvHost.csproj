@@ -5,7 +5,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{7E20CAD2-4A19-4D72-A1B1-5C0339AF67F9}</ProjectGuid>
-    <OutputType>Library</OutputType>
+    <OutputType>Exe</OutputType>
     <RootNamespace>SrvHost</RootNamespace>
     <AssemblyName>SrvHost</AssemblyName>
     <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>

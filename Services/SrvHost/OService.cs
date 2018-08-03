@@ -12,5 +12,6 @@ namespace SrvHost
         public string FileName { get; set; }
         public string IFileName { get; set; }
         public string Namespace { get; set; }
+        public string INamespace { get; set; }
     }
 }

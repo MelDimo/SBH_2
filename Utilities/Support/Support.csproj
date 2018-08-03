@@ -7,7 +7,7 @@
     <ProjectGuid>{9F2E658C-5B46-426F-8B64-B817B61E6572}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Support</RootNamespace>
+    <RootNamespace>com.sbh.dll.support</RootNamespace>
     <AssemblyName>Support</AssemblyName>
     <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>

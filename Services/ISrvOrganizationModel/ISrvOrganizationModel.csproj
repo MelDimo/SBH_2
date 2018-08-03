@@ -7,7 +7,7 @@
     <ProjectGuid>{5FD6E812-2487-4BB0-96DB-2BC8CBFCC278}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ISrvOrganizationModel</RootNamespace>
+    <RootNamespace>com.sbh.srv.interfaces</RootNamespace>
     <AssemblyName>ISrvOrganizationModel</AssemblyName>
     <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -49,6 +49,12 @@
   <ItemGroup>
     <Compile Include="IOrganizationModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ICallBack\ICallBack.csproj">
+      <Project>{dc58ee51-915f-4556-9d90-2ff2eb9a0474}</Project>
+      <Name>ICallBack</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -2,8 +2,16 @@
 <ArrayOfOService>
   <OService>
     <Name>SrvOrganizationModel</Name>
-    <FileName>SrvOrganizationModel.dll</FileName>
     <IFileName>ISrvOrganizationModel.dll</IFileName>
-    <Namespace>SrvOrganizationModel.OrganizationModel</Namespace>
+    <INamespace>com.sbh.srv.interfaces.IOrganizationModel</INamespace>
+    <FileName>SrvOrganizationModel.dll</FileName>
+    <Namespace>com.sbh.srv.implementations.OrganizationModel</Namespace>
+  </OService>
+  <OService>
+    <Name>SrvSomeProcess</Name>
+    <IFileName>ISomeProcess.dll</IFileName>
+    <INamespace>SomeProcess.IProcess</INamespace>
+    <FileName>SomeProcessBody.dll</FileName>
+    <Namespace>SomeProcessBody.Process</Namespace>
   </OService>
 </ArrayOfOService>

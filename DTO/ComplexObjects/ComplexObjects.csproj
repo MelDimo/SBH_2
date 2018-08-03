@@ -7,7 +7,7 @@
     <ProjectGuid>{84CDAFC2-D707-4273-874B-00BC505DAD88}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ComplexObjects</RootNamespace>
+    <RootNamespace>com.sbh.dto.complexobjects</RootNamespace>
     <AssemblyName>ComplexObjects</AssemblyName>
     <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>

@@ -7,7 +7,7 @@
     <ProjectGuid>{B00E5CF5-2023-4484-B238-089B9C084ED2}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>SrvOrganizationModel</RootNamespace>
+    <RootNamespace>com.sbh.srv.implementations</RootNamespace>
     <AssemblyName>SrvOrganizationModel</AssemblyName>
     <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -33,14 +33,15 @@
     <Reference Include="ComplexObjects">
       <HintPath>..\..\DTO\ComplexObjects\bin\Debug\ComplexObjects.dll</HintPath>
     </Reference>
-    <Reference Include="GValues">
-      <HintPath>..\..\GValues\GValues\bin\Debug\GValues.dll</HintPath>
+    <Reference Include="SimpleObjects">
+      <HintPath>..\..\DTO\SimpleObjects\bin\Debug\SimpleObjects.dll</HintPath>
     </Reference>
     <Reference Include="Support">
       <HintPath>..\..\Utilities\Support\bin\Debug\Support.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -54,6 +55,14 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\GValues\GValues.csproj">
+      <Project>{1a3be90e-f16d-4f91-9a30-57fcce62d0f5}</Project>
+      <Name>GValues</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ICallBack\ICallBack.csproj">
+      <Project>{dc58ee51-915f-4556-9d90-2ff2eb9a0474}</Project>
+      <Name>ICallBack</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ISrvOrganizationModel\ISrvOrganizationModel.csproj">
       <Project>{5fd6e812-2487-4bb0-96db-2bc8cbfcc278}</Project>
       <Name>ISrvOrganizationModel</Name>

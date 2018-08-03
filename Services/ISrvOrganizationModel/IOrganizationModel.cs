@@ -1,4 +1,6 @@
-﻿using System;
+﻿using com.sbh.dto.complexobjects;
+using com.sbh.dto.simpleobjects;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
@@ -6,12 +8,15 @@ using System.ServiceModel;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ISrvOrganizationModel
+namespace com.sbh.srv.interfaces
 {
-    [ServiceContract]
+    [ServiceContract(SessionMode = SessionMode.Required, CallbackContract = typeof(ICallBack))]
     public interface IOrganizationModel
     {
-        [OperationContract]
-        ObservableCollection<ComplexObjects.ComplexOrganization> GetOrganization();
+        [OperationContract(IsOneWay = true)]
+        void GetOrganization();
+
+        [OperationContract(IsOneWay = true)]
+        void AddOrganization(Organization organization);
     }
 }

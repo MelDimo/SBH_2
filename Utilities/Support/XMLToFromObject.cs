@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using System.Xml;
 using System.Xml.Serialization;
 
-namespace Support
+namespace com.sbh.dll.support
 {
     public class XMLToFromObject
     {
