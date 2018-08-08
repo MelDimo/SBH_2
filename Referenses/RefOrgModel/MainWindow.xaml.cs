@@ -1,6 +1,6 @@
 ﻿using com.sbh.dto.complexobjects;
 using com.sbh.dto.simpleobjects;
-using com.sbh.srv.interfaces;
+using SomeProcess;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -43,26 +43,27 @@ namespace RefOrgModel
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            DuplexSample();
+             DuplexSampleAsync();
         }
 
-        private void DuplexSample()
+        private async void DuplexSampleAsync()
         {
             EndpointAddress endpoint = new EndpointAddress("http://192.168.1.222:584/SrvSomeProcess");
             DuplexChannelFactory<SomeProcess.IProcess> dualFactory =
                 new DuplexChannelFactory<SomeProcess.IProcess> (new CallbackHandler(), new WSDualHttpBinding(), endpoint);
             SomeProcess.IProcess channel = dualFactory.CreateChannel();
 
-            channel.TaskProcess();
+            await channel.TaskProcess();
         }
     }
 
     [CallbackBehavior(UseSynchronizationContext = false)]
-    public class CallbackHandler : SomeProcess.IProcessCallback
+    public class CallbackHandler : IProcessCallback
     {
-        public void TaskProgress(int percentDone)
+        Task IProcessCallback.TaskProgress(int percentDone)
         {
-            Debug.Print($"value is {percentDone}");
+            Debug.Print($"Current percent: {percentDone}");
+            return null;
         }
     }
 }

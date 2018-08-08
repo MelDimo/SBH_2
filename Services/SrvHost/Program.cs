@@ -1,4 +1,5 @@
 ﻿
+using com.sbh.srv.implementations;
 using System;
 using System.IO;
 
@@ -8,7 +9,7 @@ namespace SrvHost
     {
         static void Main(string[] args)
         {
-            Directory.SetCurrentDirectory(GValues.GValues.CurrentDirectory);
+            Directory.SetCurrentDirectory(GValues.CurrentDirectory);
 
             Host host = new Host();
             host.LoadServices();

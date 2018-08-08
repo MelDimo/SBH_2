@@ -40,12 +40,9 @@
     <Reference Include="GValues">
       <HintPath>..\..\GValues\GValues\bin\Debug\GValues.dll</HintPath>
     </Reference>
-    <Reference Include="ISomeProcess">
-      <HintPath>..\..\..\RELEASE\services\ISomeProcess.dll</HintPath>
-    </Reference>
-    <Reference Include="ISrvOrganizationModel, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="ISomeProcess, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\RELEASE\services\ISrvOrganizationModel.dll</HintPath>
+      <HintPath>..\..\..\DEBUG\AppMain\contracts\ISomeProcess.dll</HintPath>
     </Reference>
     <Reference Include="SimpleObjects">
       <HintPath>..\..\DTO\ComplexObjects\bin\Debug\SimpleObjects.dll</HintPath>

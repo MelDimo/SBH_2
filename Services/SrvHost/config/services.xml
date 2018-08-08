@@ -1,13 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ArrayOfOService>
   <OService>
-    <Name>SrvOrganizationModel</Name>
-    <IFileName>ISrvOrganizationModel.dll</IFileName>
-    <INamespace>com.sbh.srv.interfaces.IOrganizationModel</INamespace>
-    <FileName>SrvOrganizationModel.dll</FileName>
-    <Namespace>com.sbh.srv.implementations.OrganizationModel</Namespace>
-  </OService>
-  <OService>
     <Name>SrvSomeProcess</Name>
     <IFileName>ISomeProcess.dll</IFileName>
     <INamespace>SomeProcess.IProcess</INamespace>

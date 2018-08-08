@@ -12,25 +12,39 @@ namespace SomeProcessBody
     [ServiceBehavior(ConcurrencyMode = ConcurrencyMode.Reentrant)]
     public class Process : IProcess
     {
-        public IAsyncResult BeginProcessAsync(AsyncCallback callback, object state)
+        List<IProcessCallback> processCallbacks = new List<IProcessCallback>();
+        
+
+        //public async void TaskProcess()
+        //{
+        //    await Task.Run() => { }
+
+        //                for (int i = 0; i <= 100; i++)
+        //    {
+        //        Thread.Sleep(50);
+        //        OperationContext.Current.GetCallbackChannel<IProcessCallback>().TaskProgress(i);
+        //    }
+
+        //}
+
+        async void IProcess.TaskProcess()
         {
-            throw new NotImplementedException();
+            IProcessCallback callback = OperationContext.Current.GetCallbackChannel<IProcessCallback>();
+            if (!processCallbacks.Contains(callback)) processCallbacks.Add(callback);
+
+            await TaskProcessDoWork();
         }
 
-        public void EndTaskProcessAsync(IAsyncResult ar)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void TaskProcess()
+        private async Task TaskProcessDoWork()
         {
             for (int i = 0; i <= 100; i++)
             {
                 Thread.Sleep(50);
-                OperationContext.Current.GetCallbackChannel<IProcessCallback>().TaskProgress(i);
+                foreach (IProcessCallback callback in processCallbacks)
+                {
+                    callback.TaskProgress(i);
+                }
             }
         }
-
-        
     }
 }

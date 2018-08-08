@@ -10,17 +10,13 @@ namespace SomeProcess
     [ServiceContract(CallbackContract = typeof(IProcessCallback))]
     public interface IProcess
     {
-        [OperationContract]
+        [OperationContract(IsOneWay = true)]
         void TaskProcess();
-
-        [OperationContract(AsyncPattern = true)]
-        IAsyncResult BeginProcessAsync(AsyncCallback callback, object state);
-        void EndTaskProcessAsync(IAsyncResult ar);
     }
 
     public interface IProcessCallback
     {
-        [OperationContract]
+        [OperationContract(IsOneWay = true)]
         void TaskProgress(int percentDone);
     }
 }

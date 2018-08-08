@@ -1,4 +1,5 @@
 ﻿using com.sbh.dll.support;
+using com.sbh.srv.implementations;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -24,7 +25,7 @@ namespace SrvHost
             LOServices = new List<OService>();
             lHost = new List<ServiceHost>();
 
-            pathConfig = $"{Environment.CurrentDirectory}{GValues.GValues.PathConfig}\\services.xml";
+            pathConfig = $"{Environment.CurrentDirectory}\\config\\services.xml";
         }
 
         public void LoadServices()
@@ -35,11 +36,11 @@ namespace SrvHost
             foreach (OService oservices in LOServices)
             {
                 Assembly assembly = 
-                    Assembly.LoadFrom($"{GValues.GValues.CurrentDirectory}{GValues.GValues.ServicesDirectory}\\{oservices.FileName}");
+                    Assembly.LoadFrom($"{GValues.CurrentDirectory}\\services\\{oservices.Name}\\{oservices.FileName}");
                 Type type = assembly.GetType(oservices.Namespace);
 
                 Assembly iassembly =
-                    Assembly.LoadFrom($"{GValues.GValues.CurrentDirectory}{GValues.GValues.ServicesDirectory}\\{oservices.IFileName}");
+                    Assembly.LoadFrom($"{GValues.CurrentDirectory}\\services\\{oservices.Name}\\{oservices.IFileName}");
                 Type itype = iassembly.GetType(oservices.INamespace);
 
 
