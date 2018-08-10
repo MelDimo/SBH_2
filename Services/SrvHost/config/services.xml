@@ -1,10 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ArrayOfOService>
   <OService>
-    <Name>SrvSomeProcess</Name>
-    <IFileName>ISomeProcess.dll</IFileName>
-    <INamespace>SomeProcess.IProcess</INamespace>
-    <FileName>SomeProcessBody.dll</FileName>
-    <Namespace>SomeProcessBody.Process</Namespace>
+    <Name>BroadcastorService</Name>
+    <IFileName>IBroadcastorService.dll</IFileName>
+    <INamespace>com.sbh.srv.interfaces.IBroadcastorService</INamespace>
+    <FileName>BroadcastorService.dll</FileName>
+    <Namespace>com.sbh.srv.implementations.BroadcastorService</Namespace>
   </OService>
 </ArrayOfOService>

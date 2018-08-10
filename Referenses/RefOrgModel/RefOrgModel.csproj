@@ -40,6 +40,9 @@
     <Reference Include="GValues">
       <HintPath>..\..\GValues\GValues\bin\Debug\GValues.dll</HintPath>
     </Reference>
+    <Reference Include="IBroadcastorService">
+      <HintPath>..\..\..\DEBUG\AppMain\contracts\IBroadcastorService.dll</HintPath>
+    </Reference>
     <Reference Include="ISomeProcess, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\DEBUG\AppMain\contracts\ISomeProcess.dll</HintPath>
@@ -122,6 +125,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Model\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

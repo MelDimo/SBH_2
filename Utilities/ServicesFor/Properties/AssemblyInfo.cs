@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("SrvOrganizationModel")]
+[assembly: AssemblyTitle("ServicesFor")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Microsoft")]
-[assembly: AssemblyProduct("SrvOrganizationModel")]
+[assembly: AssemblyProduct("ServicesFor")]
 [assembly: AssemblyCopyright("Copyright © Microsoft 2018")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("b00e5cf5-2023-4484-b238-089b9c084ed2")]
+[assembly: Guid("833e0ac0-abea-4986-a2c9-862b0685946d")]
 
 // Version information for an assembly consists of the following four values:
 //

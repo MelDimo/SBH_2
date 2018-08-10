@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("IMessaging")]
+[assembly: AssemblyTitle("IBroadcastorService")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Microsoft")]
-[assembly: AssemblyProduct("IMessaging")]
+[assembly: AssemblyProduct("IBroadcastorService")]
 [assembly: AssemblyCopyright("Copyright © Microsoft 2018")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("6b842661-e158-4a84-b430-9d5baea65eb3")]
+[assembly: Guid("70bb4dc9-be49-4497-b1ca-134bf16295e8")]
 
 // Version information for an assembly consists of the following four values:
 //

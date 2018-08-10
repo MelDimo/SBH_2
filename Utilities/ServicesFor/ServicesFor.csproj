@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{B00E5CF5-2023-4484-B238-089B9C084ED2}</ProjectGuid>
+    <ProjectGuid>{833E0AC0-ABEA-4986-A2C9-862B0685946D}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>com.sbh.srv.implementations</RootNamespace>
-    <AssemblyName>SrvOrganizationModel</AssemblyName>
+    <RootNamespace>com.sbh.dll.services</RootNamespace>
+    <AssemblyName>ServicesFor</AssemblyName>
     <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -30,18 +30,11 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="ComplexObjects">
-      <HintPath>..\..\DTO\ComplexObjects\bin\Debug\ComplexObjects.dll</HintPath>
-    </Reference>
-    <Reference Include="SimpleObjects">
-      <HintPath>..\..\DTO\SimpleObjects\bin\Debug\SimpleObjects.dll</HintPath>
-    </Reference>
-    <Reference Include="Support">
-      <HintPath>..\..\Utilities\Support\bin\Debug\Support.dll</HintPath>
+    <Reference Include="IBroadcastorService">
+      <HintPath>..\..\..\DEBUG\AppMain\contracts\IBroadcastorService.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -50,23 +43,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DBAccess.cs" />
-    <Compile Include="OrganizationModel.cs" />
+    <Compile Include="BroadcastorCallback.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\GValues\GValues.csproj">
-      <Project>{1a3be90e-f16d-4f91-9a30-57fcce62d0f5}</Project>
-      <Name>GValues</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\ICallBack\ICallBack.csproj">
-      <Project>{dc58ee51-915f-4556-9d90-2ff2eb9a0474}</Project>
-      <Name>ICallBack</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\ISrvOrganizationModel\ISrvOrganizationModel.csproj">
-      <Project>{5fd6e812-2487-4bb0-96db-2bc8cbfcc278}</Project>
-      <Name>ISrvOrganizationModel</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

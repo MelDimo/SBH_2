@@ -8,8 +8,8 @@ namespace com.sbh.dto.simpleobjects
 {
     public enum CODES
     {
-        UNDEFINED   = 0,
-        ERROR       = 1,
-        SUCCESS     = 2
+        UNDEFINED,
+        ERROR,
+        SUCCESS
     }
 }

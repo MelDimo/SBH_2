@@ -1,5 +1,7 @@
-﻿using com.sbh.dto.complexobjects;
+﻿using com.sbh.dll.support;
+using com.sbh.dto.complexobjects;
 using com.sbh.dto.simpleobjects;
+using com.sbh.srv.interfaces;
 using SomeProcess;
 using System;
 using System.Collections.Generic;
@@ -27,43 +29,54 @@ namespace RefOrgModel
     /// </summary>
     public partial class MainWindow : Window
     {
+        private delegate void HandleBroadcastCallback(object sender, EventArgs e);
+        //private BroadcastorServiceClient
+
         public MainWindow()
         {
             InitializeComponent();
 
             Directory.SetCurrentDirectory(GValues.GValues.CurrentDirectory);
-
-            //SrvHost.Host host = new SrvHost.Host();
-            //host.LoadServices();
-
-
-           
-
         }
+
+        public void HandleBroadcast(object sender, EventArgs e)
+        {
+            var eventData = (com.sbh.srv.interfaces.EventDataType)sender;
+
+            Debug.Print($"Hello:    {eventData.EventMessage}");
+        }
+
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-             DuplexSampleAsync();
+             DuplexSample();
         }
 
-        private async void DuplexSampleAsync()
+        private void DuplexSample()
         {
-            EndpointAddress endpoint = new EndpointAddress("http://192.168.1.222:584/SrvSomeProcess");
-            DuplexChannelFactory<SomeProcess.IProcess> dualFactory =
-                new DuplexChannelFactory<SomeProcess.IProcess> (new CallbackHandler(), new WSDualHttpBinding(), endpoint);
-            SomeProcess.IProcess channel = dualFactory.CreateChannel();
+            EndpointAddress endpoint = new EndpointAddress("http://192.168.1.222:584/BroadcastorService");
 
-            await channel.TaskProcess();
+            BroadcastorCallback bc = new BroadcastorCallback();
+            bc.SetHandler(this.HandleBroadcast);
+
+            DuplexChannelFactory<IBroadcastorService> dualFactory =
+                new DuplexChannelFactory<IBroadcastorService> (bc, new WSDualHttpBinding(), endpoint);
+            IBroadcastorService channel = dualFactory.CreateChannel();
+
+            bool result = channel.RegisterClient("client_1");
+
+            channel.NotifyServer(new EventDataType() { ClientName = "client_1", EventMessage = "Hello from client_1" });
+
         }
     }
 
-    [CallbackBehavior(UseSynchronizationContext = false)]
-    public class CallbackHandler : IProcessCallback
-    {
-        Task IProcessCallback.TaskProgress(int percentDone)
-        {
-            Debug.Print($"Current percent: {percentDone}");
-            return null;
-        }
-    }
+    //[CallbackBehavior(UseSynchronizationContext = false)]
+    //public class CallbackHandler : IProcessCallback
+    //{
+    //    Task IProcessCallback.TaskProgress(int percentDone)
+    //    {
+    //        Debug.Print($"Current percent: {percentDone}");
+    //        return null;
+    //    }
+    //}
 }
