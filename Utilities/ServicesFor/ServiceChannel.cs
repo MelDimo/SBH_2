@@ -48,16 +48,32 @@ namespace com.sbh.dll.services
 
             Msg result = channel.RegisterClient(new Msg() { ClientName = "Client_1", GUID = new Guid() });
 
-            Debug.Print($"{result.MsgStatus}");
+        }
 
-            channel.NotifyServer(new Msg() { ClientName = "client_1", GUID = new Guid(), MsgTypeIn = MSGTYPE.WATCHONLINE });
+        /// <summary>
+        /// Подписываемся на отслеживание изменений
+        /// </summary>
+        /// <param name="msgType"></param>
+        /// <param name="eventHandler"></param>
+        public void Subscribe(MSGTYPE msgType, EventHandler eventHandler)
+        {
+            //subscribers.Keys.Contains(msgType)
 
+            Msg result = channel.Subscribe(new Msg() { ClientName = "client_1", GUID = new Guid(), MsgTypeIn = msgType });
+
+            if (result?.MsgStatus == MSGSTATUS.SUCCESS) subscribers.Add(msgType, eventHandler);
 
         }
 
-        public void Subscribe(MSGTYPE msgType, EventHandler eventHandler)
+        /// <summary>
+        /// Отписываемся от отслеживания изменений
+        /// </summary>
+        /// <param name="msgType"></param>
+        public void UnScribe(MSGTYPE msgType)
         {
-            subscribers.Add(msgType, eventHandler);
+            Msg result = channel.UnSubscribe(new Msg() { ClientName = "client_1", GUID = new Guid(), MsgTypeIn = msgType });
+
+            if (result?.MsgStatus == MSGSTATUS.SUCCESS) subscribers.Remove(msgType);
         }
     }
 }
