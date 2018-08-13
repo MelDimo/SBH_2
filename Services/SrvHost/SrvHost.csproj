@@ -38,9 +38,11 @@
     <Reference Include="ComplexObjects">
       <HintPath>..\..\DTO\ComplexObjects\bin\Debug\ComplexObjects.dll</HintPath>
     </Reference>
-    <Reference Include="GValues, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="GValues">
       <HintPath>..\GValues\bin\Debug\GValues.dll</HintPath>
+    </Reference>
+    <Reference Include="ServicesSide">
+      <HintPath>..\..\..\DEBUG\AppServices\dto\ServicesSide.dll</HintPath>
     </Reference>
     <Reference Include="SimpleObjects">
       <HintPath>..\..\DTO\ComplexObjects\bin\Debug\SimpleObjects.dll</HintPath>

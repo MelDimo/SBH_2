@@ -7,7 +7,7 @@
     <ProjectGuid>{1A3BE90E-F16D-4F91-9A30-57FCCE62D0F5}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>com.sbh.srv.implementations</RootNamespace>
+    <RootNamespace>com.sbh.srv</RootNamespace>
     <AssemblyName>GValues</AssemblyName>
     <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using com.sbh.dto.srv;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.Serialization;
@@ -8,20 +9,10 @@ using System.Threading.Tasks;
 
 namespace com.sbh.srv.interfaces
 {
-    [DataContract]
-    public class EventDataType
-    {
-        [DataMember]
-        public string ClientName { get; set; }
-
-        [DataMember]
-        public string EventMessage { get; set; }
-    }
-
     public interface IBroadcastorCallBack
     {
         [OperationContract(IsOneWay = true)]
-        void BroadcastToClient(EventDataType eventData);
+        void BroadcastToClient(Msg eventData);
     }
 
     [ServiceContract(CallbackContract = typeof(IBroadcastorCallBack))]
@@ -32,14 +23,30 @@ namespace com.sbh.srv.interfaces
         /// </summary>
         /// <param name="clientName">Имя клиента</param>
         [OperationContract(IsOneWay = false)]
-        bool RegisterClient(string clientName);
+        Msg RegisterClient(Msg msg);
+
+        /// <summary>
+        /// Подписываемся на события
+        /// </summary>
+        /// <param name="msg"></param>
+        /// <returns></returns>
+        [OperationContract(IsOneWay = false)]
+        Msg Subscribe(Msg msg);
+
+        /// <summary>
+        /// Отписываемся от события
+        /// </summary>
+        /// <param name="msg"></param>
+        /// <returns></returns>
+        [OperationContract(IsOneWay = false)]
+        Msg UnSubscribe(Msg msg);
 
         /// <summary>
         /// Уведомление службы о событии на клиенте
         /// </summary>
         /// <param name="eventData">Событие</param>
         [OperationContract(IsOneWay = true)]
-        void NotifyServer(EventDataType eventData);
+        void NotifyServer(Msg eventData);
     }
 
 

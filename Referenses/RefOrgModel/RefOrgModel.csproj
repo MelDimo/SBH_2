@@ -43,15 +43,14 @@
     <Reference Include="IBroadcastorService">
       <HintPath>..\..\..\DEBUG\AppMain\contracts\IBroadcastorService.dll</HintPath>
     </Reference>
-    <Reference Include="ISomeProcess, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\DEBUG\AppMain\contracts\ISomeProcess.dll</HintPath>
+    <Reference Include="ServicesFor">
+      <HintPath>..\..\Utilities\ServicesFor\bin\Debug\ServicesFor.dll</HintPath>
+    </Reference>
+    <Reference Include="ServicesSide">
+      <HintPath>..\..\..\DEBUG\AppMain\dto\ServicesSide.dll</HintPath>
     </Reference>
     <Reference Include="SimpleObjects">
       <HintPath>..\..\DTO\ComplexObjects\bin\Debug\SimpleObjects.dll</HintPath>
-    </Reference>
-    <Reference Include="SrvHost">
-      <HintPath>..\..\Services\SrvHost\bin\Debug\SrvHost.dll</HintPath>
     </Reference>
     <Reference Include="Support">
       <HintPath>..\..\Utilities\Support\bin\Debug\Support.dll</HintPath>

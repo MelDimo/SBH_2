@@ -1,26 +1,13 @@
-﻿using com.sbh.dll.support;
-using com.sbh.dto.complexobjects;
-using com.sbh.dto.simpleobjects;
+﻿using com.sbh.dll.services;
+using com.sbh.dto.srv;
 using com.sbh.srv.interfaces;
-using SomeProcess;
 using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.IO;
-using System.Linq;
 using System.ServiceModel;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+
 
 namespace RefOrgModel
 {
@@ -29,27 +16,40 @@ namespace RefOrgModel
     /// </summary>
     public partial class MainWindow : Window
     {
-        private delegate void HandleBroadcastCallback(object sender, EventArgs e);
-        //private BroadcastorServiceClient
+        //private delegate void HandleBroadcastCallback(object sender, EventArgs e);
+        //private HandleBroadcastCallback broadcastCallback;
 
         public MainWindow()
         {
             InitializeComponent();
 
             Directory.SetCurrentDirectory(GValues.GValues.CurrentDirectory);
+
+            //broadcastCallback = HandleBroadcast;
         }
 
         public void HandleBroadcast(object sender, EventArgs e)
         {
-            var eventData = (com.sbh.srv.interfaces.EventDataType)sender;
+            Msg eventData = (Msg)sender;
 
-            Debug.Print($"Hello:    {eventData.EventMessage}");
+            StringBuilder sb = new StringBuilder();
+            sb.AppendLine("From server:");
+            sb.AppendLine($"eventData.ClientName: {eventData.ClientName};");
+            sb.AppendLine($"eventData.Error: {eventData.Error};");
+            sb.AppendLine($"eventData.GUID: {eventData.GUID};");
+            sb.AppendLine($"eventData.MsgStatus: {eventData.MsgStatus};");
+            sb.AppendLine($"eventData.MsgTypeIn: {eventData.MsgTypeIn};");
+            sb.AppendLine($"eventData.MsgTypeOut: {eventData.MsgTypeOut};");
+            sb.AppendLine($"eventData.Obj: {eventData.Obj};");
+
+            Debug.Print(sb.ToString());
         }
 
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-             DuplexSample();
+            ServiceChannel srvChannel = new ServiceChannel();
+            srvChannel.Subscribe(MSGTYPE.WATCHONLINE, HandleBroadcast);
         }
 
         private void DuplexSample()
@@ -63,9 +63,11 @@ namespace RefOrgModel
                 new DuplexChannelFactory<IBroadcastorService> (bc, new WSDualHttpBinding(), endpoint);
             IBroadcastorService channel = dualFactory.CreateChannel();
 
-            bool result = channel.RegisterClient("client_1");
+            Msg result = channel.RegisterClient(new Msg() { ClientName = "Client_1", GUID = new Guid() });
 
-            channel.NotifyServer(new EventDataType() { ClientName = "client_1", EventMessage = "Hello from client_1" });
+            Debug.Print($"{result.MsgStatus}");
+
+            channel.NotifyServer(new Msg() { ClientName = "client_1", GUID = new Guid(), MsgTypeIn = MSGTYPE.WATCHONLINE});
 
         }
     }

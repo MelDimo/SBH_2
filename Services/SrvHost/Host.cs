@@ -1,5 +1,4 @@
 ﻿using com.sbh.dll.support;
-using com.sbh.srv.implementations;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -35,25 +34,6 @@ namespace SrvHost
 
             foreach (OService oservices in LOServices)
             {
-                //Assembly assembly = Assembly.LoadFrom($"{Environment.CurrentDirectory}\\services\\{oservices.Name}\\{oservices.FileName}");
-                //Type iassembly = assembly.GetTypes()[0].GetInterface("com.sbh.srv.interfaces.IBroadcastorService");
-
-                //ServiceHost host = new ServiceHost(assembly.GetType());
-
-                //ServiceMetadataBehavior smb = new ServiceMetadataBehavior() { HttpGetEnabled = true, HttpGetUrl = new Uri($"http://localhost:584/{oservices.Name}") };
-
-                //host.Description.Behaviors.Add(smb);
-
-                //host.AddServiceEndpoint(assembly.GetTypes()[0].GetInterface("com.sbh.srv.interfaces.IBroadcastorService"), 
-                //    new WSDualHttpBinding(), 
-                //    new Uri($"http://localhost:584/{oservices.Name}"));
-
-                //host.Open();
-
-                //lHost.Add(host);
-
-                //Uri BaseAddress = new Uri($"http://localhost:584/");
-
                 Assembly assembly = Assembly.LoadFile($"{Environment.CurrentDirectory}\\services\\{oservices.Name}\\{oservices.FileName}");
                 Type service = assembly.GetType(oservices.Namespace);
                 Type contract = service.GetInterface(oservices.INamespace);
@@ -61,16 +41,6 @@ namespace SrvHost
 
                 ServiceHost host = new ServiceHost(service, baseAddress);
                 ServiceEndpoint ep = host.AddServiceEndpoint(contract, new WSDualHttpBinding(), "");
-
-                //host.AddServiceEndpoint(assembly.GetType(oservices.INamespace), new WSDualHttpBinding(), oservices.Name);
-
-                //ServiceMetadataBehavior smb = new ServiceMetadataBehavior() { HttpGetEnabled = true, HttpGetUrl = new Uri($"http://localhost:584/{oservices.Name}") };
-                //host.Description.Behaviors.Add(smb);
-
-
-
-
-                //host.AddServiceEndpoint(itype, new WSDualHttpBinding(), new Uri($"http://localhost:584/{oservices.Name}"));
 
                 host.Open();
 

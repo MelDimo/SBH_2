@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace com.sbh.srv.implementations
+namespace com.sbh.srv
 {
     public class GValues
     {

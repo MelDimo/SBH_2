@@ -1,4 +1,5 @@
-﻿using com.sbh.srv.interfaces;
+﻿using com.sbh.dto.srv;
+using com.sbh.srv.interfaces;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -26,7 +27,7 @@ namespace com.sbh.dll.services
 
         #region IBroadcastorCallBack Members
 
-        public void BroadcastToClient(EventDataType eventData)
+        public void BroadcastToClient(Msg eventData)
         {
             synchronizationContext.Post(new SendOrPostCallback(OnBroadcast), eventData);
         }
