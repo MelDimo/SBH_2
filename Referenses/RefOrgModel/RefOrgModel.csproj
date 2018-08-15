@@ -43,8 +43,9 @@
     <Reference Include="IBroadcastorService">
       <HintPath>..\..\..\DEBUG\AppMain\contracts\IBroadcastorService.dll</HintPath>
     </Reference>
-    <Reference Include="ServicesFor">
-      <HintPath>..\..\Utilities\ServicesFor\bin\Debug\ServicesFor.dll</HintPath>
+    <Reference Include="ServicesFor, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\DEBUG\AppMain\ServicesFor.dll</HintPath>
     </Reference>
     <Reference Include="ServicesSide">
       <HintPath>..\..\..\DEBUG\AppMain\dto\ServicesSide.dll</HintPath>

@@ -64,6 +64,15 @@ namespace com.sbh.srv.implementations
         }
 
         /// <summary>
+        /// Метод подтверждает присутствие сервера
+        /// </summary>
+        /// <returns></returns>
+        public bool CheckAvaliable()
+        {
+            return true;
+        }
+
+        /// <summary>
         /// Клиент информирует сервер
         /// </summary>
         /// <param name="eventData"></param>

@@ -36,6 +36,9 @@
     <Reference Include="ServicesSide">
       <HintPath>..\..\..\DEBUG\AppMain\dto\ServicesSide.dll</HintPath>
     </Reference>
+    <Reference Include="SimpleObjects">
+      <HintPath>..\..\..\DEBUG\AppMain\dto\SimpleObjects.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.ServiceModel" />
@@ -50,6 +53,8 @@
     <Compile Include="BroadcastorCallback.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ServiceChannel.cs" />
+    <Compile Include="ServiceChannel\IChannelState.cs" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

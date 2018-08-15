@@ -26,6 +26,13 @@ namespace com.sbh.srv.interfaces
         Msg RegisterClient(Msg msg);
 
         /// <summary>
+        /// Метод подтверждает присутствие сервера
+        /// </summary>
+        /// <returns></returns>
+        [OperationContract(IsOneWay = false)]
+        bool CheckAvaliable();
+
+        /// <summary>
         /// Подписываемся на события
         /// </summary>
         /// <param name="msg"></param>

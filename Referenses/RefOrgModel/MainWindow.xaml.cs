@@ -1,4 +1,5 @@
 ﻿using com.sbh.dll.services;
+using com.sbh.dto.simpleobjects;
 using com.sbh.dto.srv;
 using com.sbh.srv.interfaces;
 using System;
@@ -7,7 +8,6 @@ using System.IO;
 using System.ServiceModel;
 using System.Text;
 using System.Windows;
-
 
 namespace RefOrgModel
 {
@@ -49,7 +49,8 @@ namespace RefOrgModel
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             ServiceChannel srvChannel = new ServiceChannel();
-            srvChannel.Subscribe(MSGTYPE.WATCHONLINE, HandleBroadcast);
+            MSG msg = srvChannel.RegisterClient();
+            if (msg.Code == CODES.SUCCESS) srvChannel.Subscribe(MSGTYPE.WATCHONLINE, HandleBroadcast);
         }
 
         private void DuplexSample()
