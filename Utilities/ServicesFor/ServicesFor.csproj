@@ -53,8 +53,16 @@
     <Compile Include="BroadcastorCallback.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ServiceChannel.cs" />
-    <Compile Include="ServiceChannel\IChannelState.cs" />
+    <Compile Include="ServiceChannelSM\AutomationBase.cs" />
+    <Compile Include="ServiceChannelSM\ConnectedState.cs" />
+    <Compile Include="ServiceChannelSM\DisconnectedState.cs" />
+    <Compile Include="ServiceChannelSM\Event.cs" />
+    <Compile Include="ServiceChannelSM\IConnection.cs" />
+    <Compile Include="ServiceChannelSM\IEventSink.cs" />
+    <Compile Include="ServiceChannelSM\StateBase.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="ServiceChannelSM\ClassDiagram1.cd" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

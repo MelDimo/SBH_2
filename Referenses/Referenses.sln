@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.27703.2042
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RefOrgModel", "RefOrgModel\RefOrgModel.csproj", "{3EB1F70F-6A6E-4A52-BE44-16B4A9AB4AC7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UsingStateMachineSml", "UsingStateMachineSml\UsingStateMachineSml.csproj", "{3A878622-9A1F-4006-A905-ACE7BDE8A812}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{3EB1F70F-6A6E-4A52-BE44-16B4A9AB4AC7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3EB1F70F-6A6E-4A52-BE44-16B4A9AB4AC7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3EB1F70F-6A6E-4A52-BE44-16B4A9AB4AC7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3A878622-9A1F-4006-A905-ACE7BDE8A812}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3A878622-9A1F-4006-A905-ACE7BDE8A812}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3A878622-9A1F-4006-A905-ACE7BDE8A812}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3A878622-9A1F-4006-A905-ACE7BDE8A812}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

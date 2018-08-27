@@ -4,11 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace com.sbh.dll.services.ServiceChannel
+namespace com.sbh.dll.services.servicechannelsm
 {
-    public interface IChannelState
+    public interface IEventSink
     {
-        void RegisterClient();
-
+        void CastEvent(Event pEvent);
     }
 }

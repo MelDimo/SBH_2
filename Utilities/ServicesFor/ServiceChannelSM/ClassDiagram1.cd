@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="com.sbh.dll.services.servicechannelsm.AutomationBase&lt;T&gt;" Collapsed="true">
+    <Position X="11" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIAIAABAAAAAAAAAAAAAAAAEAAAAAAAAAAA=</HashCode>
+      <FileName>ServiceChannelSM\AutomationBase.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="com.sbh.dll.services.servicechannelsm.ConnectedState&lt;T&gt;">
+    <Position X="5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAABBAAAAAAAAAEAAAIAAAAAAAAAQAAUAAAAAAAA=</HashCode>
+      <FileName>ServiceChannelSM\ConnectedState.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="com.sbh.dll.services.servicechannelsm.DisconnectedState&lt;T&gt;" Collapsed="true">
+    <Position X="10.25" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAABAAAAAAAAAEAAAoAAAAAAAAAQAAEAAAAAAAA=</HashCode>
+      <FileName>ServiceChannelSM\DisconnectedState.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="com.sbh.dll.services.servicechannelsm.Event" Collapsed="true">
+    <Position X="7" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAEAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ServiceChannelSM\Event.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="com.sbh.dll.services.servicechannelsm.StateBase&lt;T&gt;">
+    <Position X="7.5" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAgQAAAAAAA=</HashCode>
+      <FileName>ServiceChannelSM\StateBase.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="com.sbh.dll.services.servicechannelsm.IConnection" Collapsed="true">
+    <Position X="3.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAAAAEAAAIAAAAAAAAAQAAAAAAAAAAA=</HashCode>
+      <FileName>ServiceChannelSM\IConnection.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="com.sbh.dll.services.servicechannelsm.IEventSink" Collapsed="true">
+    <Position X="2.75" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ServiceChannelSM\IEventSink.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
